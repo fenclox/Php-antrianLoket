@@ -176,10 +176,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-3"></div>
-                        <div class="col-sm-9">
-                        <button type="submit" class="btn btn-dark">Simpan</button>
-                        <a href="" id="cetakLabel" target="_blank" class="btn btn-dark text-white">Cetak</a>
+                        <!-- <div class="col-md-3"></div> -->
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-sm btn-dark"><i class="fa fa-bars"></i>Simpan</button>
+                            <a href="" id="cetakLabel" target="_blank" class="btn btn-sm btn-dark text-white">Cetak Label</a>
+                            <a href="" id="cetakLabelAnak" target="_blank" class="btn btn-sm btn-dark text-white">Cetak Glg. Anak</a>
+                            <a href="" id="cetakLabelDewasa" target="_blank" class="btn btn-sm btn-dark text-white">Cetak Glg. Dewasa</a>
                         </div>
                     </div>
 
@@ -203,6 +205,10 @@
             // link cetak label
             var result = "cetak-label.php?no_reg="+no_reg +"&nama="+nama +"&type="+type +"&kamar="+kamar +"&no_bed="+no_bed;
             $('#cetakLabel').attr('href', result);
+            var resultAnak = "cetak-label_anak.php?no_reg="+no_reg +"&nama="+nama +"&type="+type +"&kamar="+kamar +"&no_bed="+no_bed;
+            $('#cetakLabelAnak').attr('href', resultAnak);
+            var resultDewasa = "cetak-label_dewasa.php?no_reg="+no_reg +"&nama="+nama +"&type="+type +"&kamar="+kamar +"&no_bed="+no_bed;
+            $('#cetakLabelDewasa').attr('href', resultDewasa);
             // ajax data
             $.ajax({
                 url: 'proses-ajax.php',
