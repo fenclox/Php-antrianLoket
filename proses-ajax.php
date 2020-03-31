@@ -5,7 +5,7 @@ $query = mysqli_query($koneksi, "SELECT registration_code,registered_date,mr,sal
                                 FROM  whms_registrations reg
                                 INNER JOIN  whms_patients norm ON norm.id=reg.patient_id
                                 INNER JOIN ex_registrations_type ty ON ty.reg_id=reg.registration_type
-                                INNER JOIN whms_registrations_handling_doctors han ON han.registration_id=reg.registration_code
+                                INNER JOIN whms_registrations_handling_doctors han ON han.registration_id=reg.id
                                 INNER JOIN whms_employee emp ON emp.id=han.doctor_id
                                 INNER JOIN whms_insurer_company ins ON ins.id=reg.insurer_class_id
                                 INNER JOIN whms_classes kls ON kls.id=reg.class_id
