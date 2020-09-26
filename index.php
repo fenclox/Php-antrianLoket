@@ -1,3 +1,6 @@
+<?php
+    include 'koneksi.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,54 +11,42 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Login</title>
+    <style>
+        @media print and (width: 8cm) and (height: 3cm) {
+            @page {
+                margin: 0cm;
+            }
+        }
+    </style>
+    <title>Antrian Loket</title>
   </head>
-  <body class="bg-dark">
+  <body>
 
     <!-- Content -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Antrian</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        <div class="row justify-content-md-center pt-5">
-            <div class="col-md-5 bg-white p-4">
-                <!-- Title -->
-                <div class="text-center pb-2">
-                    <h4>Login - Aplikasi Label Pasien</h4>
-                </div>
-                <!-- Cek pesan notifikasi -->
-                <?php 
-                if(isset($_GET['pesan'])){
-                    if($_GET['pesan'] == "gagal"){
-                        ?>
-                        <div class="alert alert-dark mb-0 p-1 pl-2" role="alert">
-                            Login gagal! username atau password salah!
-                        </div>
-                        <?php
-                    }else if($_GET['pesan'] == "logout"){
-                        ?>
-                        <div class="alert alert-dark mb-0 p-1 pl-2" role="alert">
-                            Anda telah berhasil logout
-                        </div>
-                        <?php
-                    }else if($_GET['pesan'] == "belum_login"){
-                        ?>
-                        <div class="alert alert-dark mb-0 p-1 pl-2" role="alert">
-                            Anda harus login terlebih dahulu
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
+    <div class="container pt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
                 <!-- Form -->
-                <form class="pt-3" method="post" action="cek_login.php">
-                    <div class="form-group">
-                        <label for="usename">Username</label>
-                        <input name="username" type="text" class="form-control" id="username">
+                <form method="post" action="proses-simpan.php">
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12  d-flex justify-content-center col-form-label"><small class="text-danger">*Silahkan klik tombol dibawah untuk mendapatkan nomor antrian</small></label>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input name="password" type="password" class="form-control" id="password">
+
+                    <div class="form-group row">
+                        <div class="col-sm-12  d-flex justify-content-center">
+                            <button id="cetak" type="submit" class="btn btn-sm btn btn-dark p-2">Klik Antrian</button>
+                        </div>
                     </div>
-                    <input type="submit" class="btn btn-dark" value="Login">
+
                 </form>
                 <!-- End Form -->
             </div>
@@ -63,15 +54,7 @@
     </div>
     <!-- End Content -->
 
-    <!-- Javascript Logic -->
-    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            
-        });
-    </script>
-    <!-- End Javascript Logic -->
 
   </body>
 
