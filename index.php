@@ -19,6 +19,9 @@
         }
     </style>
     <title>Antrian Loket</title>
+    <!-- Recta -->
+    <script src="https://cdn.jsdelivr.net/npm/recta/dist/recta.js"></script>
+
   </head>
   <body>
 
@@ -48,7 +51,6 @@
                     </div>
 
                 </form>
-                <!-- End Form -->
             </div>
         </div>
     </div>

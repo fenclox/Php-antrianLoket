@@ -22,7 +22,7 @@ if(mysqli_query($koneksi, $sql)){
      $content = "
      <html>
      <body style='text-align:center'>
-          <h3 style='margin:0;padding-bottom:12px'>Rumah Sakit Bunda Mulia</h3>
+          <h3 style='margin:0;padding-bottom:12px'>RS Bunda Mulia</h3>
           <h6 style='margin:0;padding:0'>No. Antrian:</h6>
           <h1 style='margin:0;padding-bottom:12px;font-size:40px'>".$no_urut."</h1>
           <h6 style='margin:0;padding:0'>Silahkan untuk mengantri di bagian Pendaftaran</h6>
@@ -32,9 +32,9 @@ if(mysqli_query($koneksi, $sql)){
 
 	require_once "./vendor/autoload.php";
      // $mpdf = new \Mpdf\Mpdf();
-     $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [80, 50]]);
+     $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [72, 80]]);
 	// $mpdf->AddPage("P","","","","","15","15","15","15","","","","","","","","","","","","A4");
-	$mpdf->AddPage('','','','','',0,0,5,0);
+	$mpdf->AddPage('','','','','',0,0,0,0);
 	$mpdf->WriteHTML($content);
 	$mpdf->Output();
      
